@@ -113,6 +113,10 @@ public class Main {
                     directorioTelefonico.agregar();
                     break;
                 case "3":
+                    System.out.print("ingrese el nombre");
+                    String nombre = sc.nextLine();
+                    System.out.print("ingrese el apellido");
+                    String apelli = sc.nextLine();
                     break;
                 case "4":
                     try {
