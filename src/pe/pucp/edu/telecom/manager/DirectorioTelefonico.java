@@ -123,6 +123,8 @@ public class DirectorioTelefonico {
                                 System.out.print("Ingrese el facultad");
                                 String facultad = sc.nextLine();
 
+
+
                             }
                         } else {
                             System.out.println("Opción errónea");

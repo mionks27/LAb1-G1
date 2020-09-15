@@ -112,6 +112,7 @@ public class Main {
 
                     break;
                 case "2":
+                    directorioTelefonico.agregar();
                     break;
                 case "3":
                     break;
