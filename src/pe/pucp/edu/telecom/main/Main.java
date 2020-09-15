@@ -1,5 +1,8 @@
 package pe.pucp.edu.telecom.main;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -26,6 +29,19 @@ public class Main {
 
             switch (opc){
                 case "1":
+                    try {
+                        FileReader fileReader = new FileReader("Directorio.csv");
+                        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+                        String line = "";
+
+                        while((line = bufferedReader.readLine()) != null){
+                            System.out.println(line);
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                     break;
                 case "2":
