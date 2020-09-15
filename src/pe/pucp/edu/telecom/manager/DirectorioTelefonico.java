@@ -1,15 +1,24 @@
 package pe.pucp.edu.telecom.manager;
 
-import pe.pucp.edu.telecom.entity.Instructor;
-import pe.pucp.edu.telecom.entity.Jp;
-import pe.pucp.edu.telecom.entity.PersonalAdministrativo;
-import pe.pucp.edu.telecom.entity.Profesor;
+import pe.pucp.edu.telecom.entity.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DirectorioTelefonico {
-    Scanner sc = new Scanner(System.in);
-    public void agregar(){
+
+    private ArrayList<Usuario> listaUsuarios;
+
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+
+    }
+        Scanner sc = new Scanner(System.in);
+    public void agregar() {
 
         boolean tt = true;
         while (tt) {
@@ -26,7 +35,7 @@ public class DirectorioTelefonico {
                 if (usuarioTipo.equalsIgnoreCase("1")) {
                     ///docente
                     boolean pp = true;
-                    while(pp){
+                    while (pp) {
                         System.out.println("TIPOS DE DOCENTES");
                         System.out.println("1. Instructor");
                         System.out.println("2. Jefe de Practica");
@@ -36,7 +45,7 @@ public class DirectorioTelefonico {
                         String docenteTipo = sc.nextLine();
                         if (docenteTipo.equalsIgnoreCase("1") || docenteTipo.equalsIgnoreCase("2") || docenteTipo.equalsIgnoreCase("3")) {
 
-                            if(docenteTipo.equalsIgnoreCase("1")){
+                            if (docenteTipo.equalsIgnoreCase("1")) {
                                 //instructor
                                 Instructor instructor = new Instructor();
                                 System.out.print("Ingrese el codigo :");
@@ -67,8 +76,7 @@ public class DirectorioTelefonico {
                                 instructor.setDepartamento(departamento);
 
 
-
-                            }else if (docenteTipo.equalsIgnoreCase("2")){
+                            } else if (docenteTipo.equalsIgnoreCase("2")) {
                                 Jp jp = new Jp();
                                 Instructor instructor = new Instructor();
                                 System.out.print("Ingrese el codigo :");
@@ -91,7 +99,7 @@ public class DirectorioTelefonico {
                                 System.out.print("Ingrese el anho egreso");
                                 String egreso = sc.nextLine();
 
-                            }else if (docenteTipo.equalsIgnoreCase("3")){
+                            } else if (docenteTipo.equalsIgnoreCase("3")) {
                                 Profesor profesor = new Profesor();
                                 Instructor instructor = new Instructor();
                                 System.out.print("Ingrese el codigo :");
@@ -116,14 +124,14 @@ public class DirectorioTelefonico {
                                 String facultad = sc.nextLine();
 
                             }
-                        }else{
+                        } else {
                             System.out.println("Opción errónea");
                             System.out.println(" ");
 
                         }
                     }
 
-                }else if(usuarioTipo.equalsIgnoreCase("2")){
+                } else if (usuarioTipo.equalsIgnoreCase("2")) {
                     ///personal administrativo
                     PersonalAdministrativo personalAdministrativo = new PersonalAdministrativo();
                     Instructor instructor = new Instructor();
@@ -163,6 +171,6 @@ public class DirectorioTelefonico {
         }
 
 
-
     }
+
 }
