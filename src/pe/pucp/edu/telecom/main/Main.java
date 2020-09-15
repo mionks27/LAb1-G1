@@ -1,4 +1,4 @@
-package com.company.pe.pucp.edu.telecom.main;
+package pe.pucp.edu.telecom.main;
 
 import java.util.Scanner;
 
@@ -20,6 +20,7 @@ public class Main {
 
             if(opc.equalsIgnoreCase("1") ||opc.equalsIgnoreCase("2") || !opc.equalsIgnoreCase("3") || opc.equalsIgnoreCase("4") ){
                 System.out.println("Opción errónea");
+                System.out.println(" ");
             }
 
 
