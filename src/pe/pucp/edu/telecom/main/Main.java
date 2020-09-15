@@ -6,13 +6,16 @@ import pe.pucp.edu.telecom.manager.DirectorioTelefonico;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        ArrayList<Usuario> list = new ArrayList<>();
         DirectorioTelefonico directorioTelefonico = new DirectorioTelefonico();
+        directorioTelefonico.setListaUsuarios(list);
         Scanner sc = new Scanner(System.in);
         inicio:
         while (true){
@@ -32,7 +35,6 @@ public class Main {
 
             switch (opc){
                 case "1":
-
 
                     try {
                         FileReader fileReader = new FileReader("Directorio.csv");
