@@ -2,22 +2,23 @@ package pe.pucp.edu.telecom.entity;
 
 public class Docente extends Usuario {
 
-    private int añoDeInicio;
-    private int cantidadCursos;
+    private String añoDeInicio;
+    private String cantidadCursos;
 
-    public int getAñoDeInicio() {
+
+    public String getAñoDeInicio() {
         return añoDeInicio;
     }
 
-    public void setAñoDeInicio(int añoDeInicio) {
+    public void setAñoDeInicio(String añoDeInicio) {
         this.añoDeInicio = añoDeInicio;
     }
 
-    public int getCantidadCursos() {
+    public String getCantidadCursos() {
         return cantidadCursos;
     }
 
-    public void setCantidadCursos(int cantidadCursos) {
+    public void setCantidadCursos(String cantidadCursos) {
         this.cantidadCursos = cantidadCursos;
     }
 }

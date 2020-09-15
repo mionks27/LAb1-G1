@@ -2,13 +2,14 @@ package pe.pucp.edu.telecom.entity;
 
 public class Jp extends  Docente {
 
-    private int añoDeEgreso;
+    private String añoDeEgreso;
 
-    public int getAñoDeEgreso() {
+
+    public String getAñoDeEgreso() {
         return añoDeEgreso;
     }
 
-    public void setAñoDeEgreso(int añoDeEgreso) {
+    public void setAñoDeEgreso(String añoDeEgreso) {
         this.añoDeEgreso = añoDeEgreso;
     }
 }
