@@ -99,6 +99,8 @@ public class DirectorioTelefonico {
                                 System.out.print("Ingrese el anho egreso");
                                 String egreso = sc.nextLine();
 
+
+
                             } else if (docenteTipo.equalsIgnoreCase("3")) {
                                 Profesor profesor = new Profesor();
                                 Instructor instructor = new Instructor();
@@ -122,6 +124,8 @@ public class DirectorioTelefonico {
 
                                 System.out.print("Ingrese el facultad");
                                 String facultad = sc.nextLine();
+
+
 
                             }
                         } else {
