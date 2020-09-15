@@ -105,7 +105,8 @@ public class Main {
                         }
 
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println("El archivo no existe");
+                        System.out.println(" ");
                     }
 
                     break;
