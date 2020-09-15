@@ -3,9 +3,7 @@ package pe.pucp.edu.telecom.main;
 import pe.pucp.edu.telecom.entity.*;
 import pe.pucp.edu.telecom.manager.DirectorioTelefonico;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -114,6 +112,43 @@ public class Main {
                 case "2":
                     break;
                 case "3":
+                    break;
+                case "4":
+                    try {
+                        FileWriter writer = new FileWriter("DirectorioTelefonico.csv");
+                        BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+                        int index = 0;
+                        for (Usuario u : directorioTelefonico.getListaUsuarios()) {
+                                if(u instanceof Docente){
+                                    Docente doc = (Docente) u;
+                                    bufferedWriter.write( "Docente" +"," + doc.getNombre() + "," + doc.getApellido()+ "," + doc.getTelefono()+ ","+ doc.getAnexo()+ ","+ doc.getDepartamento()+ "," + doc.getAñoDeInicio()+ "," + doc.getCantidadCursos() );
+                                    if (++index < directorioTelefonico.getListaUsuarios().size()) bufferedWriter.newLine();
+                                } else if (u instanceof Jp){
+                                    Jp jp = (Jp) u;
+                                    bufferedWriter.write( "JP" +"," + jp.getNombre() + "," + jp.getApellido()+ "," + jp.getTelefono()+ ","+ jp.getAnexo()+ ","+ jp.getDepartamento()+ "," + jp.getAñoDeEgreso() );
+                                    if (++index < directorioTelefonico.getListaUsuarios().size()) bufferedWriter.newLine();
+                                }else if (u instanceof Instructor){
+                                    Instructor in = (Instructor) u;
+                                    bufferedWriter.write( "Instructor" +"," + in.getNombre() + "," + in.getApellido()+ "," + in.getTelefono()+ ","+ in.getAnexo()+ ","+ in.getDepartamento()+ "," + in.getCicloActual() );
+                                    if (++index < directorioTelefonico.getListaUsuarios().size()) bufferedWriter.newLine();
+                                }else if (u instanceof PersonalAdministrativo){
+                                    PersonalAdministrativo pa = (PersonalAdministrativo) u;
+                                    bufferedWriter.write( "PA" +"," + pa.getNombre() + "," + pa.getApellido()+ "," + pa.getTelefono()+ ","+ pa.getAnexo()+ ","+ pa.getDepartamento()+ "," + pa.getCargo());
+                                    if (++index < directorioTelefonico.getListaUsuarios().size()) bufferedWriter.newLine();
+                                }else if (u instanceof Profesor){
+                                    Profesor pro = (Profesor) u;
+                                    bufferedWriter.write( "Profesor" +"," + pro.getNombre() + "," + pro.getApellido()+ "," + pro.getTelefono()+ ","+ pro.getAnexo()+ ","+ pro.getDepartamento()+ "," + pro.getFacultad() );
+                                    if (++index < directorioTelefonico.getListaUsuarios().size()) bufferedWriter.newLine();
+                                }
+
+                        }
+
+                        bufferedWriter.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     break;
                 default:
                     break;
